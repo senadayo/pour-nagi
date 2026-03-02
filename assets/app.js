@@ -17,7 +17,7 @@ const QUIZ = [
     id: 2,
     title: "Q2 旅行クイズ",
     text: "熱海で泊まったホテル名は？",
-    choices: ["ホテル貫一", "ホテルニューアカオ", "ホテル大野屋", "熱海後楽園ホテル"],
+    choices: ["ホテル貫一", "ホテルニューアカオ", "ホテル貴一", "熱海後楽園ホテル"],
     answer: "ホテル貫一",
   },
   {
@@ -161,3 +161,4 @@ document.addEventListener("DOMContentLoaded", ()=>{
   initNav();
   initSecretPage();
 });
+
