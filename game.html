@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pour Nagi — Game</title>
-  <meta name="description" content="ミニゲームをクリアして手紙へ" />
+  <meta name="description" content="オートラン + ジャンプだけ" />
   <link rel="stylesheet" href="assets/style.css" />
   <script defer src="assets/app.js"></script>
 
@@ -100,12 +100,13 @@
     </nav>
 
     <section class="hero">
-      <div class="kicker">Mini Platform Game</div>
-      <h1 class="h1">Jump &amp; Run</h1>
+      <div class="kicker">Auto Run</div>
+      <h1 class="h1">Jump Only</h1>
       <hr class="rule" />
       <p class="sub">
-        PC：← → で移動 / Spaceでジャンプ / Rでリスタート。<br>
-        スマホ：下のボタンで操作。敵は踏めば倒せる、当たると負け。
+        自動で進みます。操作はジャンプだけ。<br>
+        PC：Spaceでジャンプ / Rでリスタート。<br>
+        スマホ：Jumpボタン or 画面タップでジャンプ。
       </p>
     </section>
 
@@ -115,15 +116,13 @@
       <div class="hud">
         <div id="status">Coins: 0 / 0</div>
         <div class="controls">
-          <div class="btn2" id="btnLeft">←</div>
-          <div class="btn2" id="btnRight">→</div>
           <div class="btn2" id="btnJump">Jump</div>
           <div class="btn2" id="btnRestart">Restart</div>
         </div>
       </div>
 
       <p class="small center" style="margin-top:10px;">
-        クリアしたら「手紙を見る」が出るよ。
+        クリアしたら「手紙を見る」。失敗したら「もう一回」。
       </p>
     </section>
   </div>
