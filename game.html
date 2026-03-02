@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pour Nagi — Game</title>
+  <meta name="description" content="ミニゲームをクリアして手紙へ" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/app.js"></script>
+
+  <style>
+    .gameWrap{
+      margin-top:18px;
+      padding:18px;
+      border:1px solid rgba(0,0,0,.08);
+      background:rgba(255,255,255,.42);
+      border-radius:18px;
+      box-shadow:0 20px 60px rgba(0,0,0,.08);
+    }
+    canvas{
+      width:100%;
+      height:auto;
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,.12);
+      background:rgba(255,255,255,.6);
+      touch-action: none;
+      display:block;
+    }
+    .hud{
+      display:flex;
+      gap:10px;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:10px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .controls{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .btn2{
+      border:1px solid rgba(0,0,0,.18);
+      background:rgba(255,255,255,.72);
+      padding:12px 14px;
+      border-radius:12px;
+      font-family:inherit;
+      cursor:pointer;
+      user-select:none;
+      -webkit-user-select:none;
+      touch-action:none;
+    }
+    .btn2:active{ transform: translateY(1px); }
+
+    .overlay{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,.30);
+      padding:18px;
+      z-index:999;
+    }
+    .panel{
+      max-width:520px;
+      width:100%;
+      background:rgba(255,255,255,.92);
+      border-radius:18px;
+      padding:18px;
+      border:1px solid rgba(0,0,0,.12);
+      box-shadow:0 30px 80px rgba(0,0,0,.18);
+      text-align:center;
+    }
+    .panel h2{
+      margin:6px 0 10px;
+      font-family:"Cormorant Garamond","Times New Roman",serif;
+      letter-spacing:.06em;
+    }
+    .panel p{ margin:0 0 12px; color:var(--muted); line-height:1.8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <div class="brand">
+        <div class="logo">Pour Nagi</div>
+        <div class="tag">Game</div>
+      </div>
+      <div class="links">
+        <a class="pill" data-nav href="index.html">Top</a>
+        <a class="pill" data-nav href="menu.html">Menu</a>
+        <a class="pill" data-nav href="chef.html">Chef</a>
+        <a class="pill" data-nav href="secret.html">Secret</a>
+        <a class="pill" data-nav href="game.html">Game</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="kicker">Mini Platform Game</div>
+      <h1 class="h1">Jump &amp; Run</h1>
+      <hr class="rule" />
+      <p class="sub">
+        PC：← → で移動 / Spaceでジャンプ / Rでリスタート。<br>
+        スマホ：下のボタンで操作。敵は踏めば倒せる、当たると負け。
+      </p>
+    </section>
+
+    <section class="gameWrap">
+      <canvas id="game" width="900" height="420"></canvas>
+
+      <div class="hud">
+        <div id="status">Coins: 0 / 0</div>
+        <div class="controls">
+          <div class="btn2" id="btnLeft">←</div>
+          <div class="btn2" id="btnRight">→</div>
+          <div class="btn2" id="btnJump">Jump</div>
+          <div class="btn2" id="btnRestart">Restart</div>
+        </div>
+      </div>
+
+      <p class="small center" style="margin-top:10px;">
+        クリアしたら「手紙を見る」が出るよ。
+      </p>
+    </section>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="panel">
+      <div class="kicker" id="ovKicker">Result</div>
+      <h2 id="ovTitle">Clear!</h2>
+      <p id="ovText">おめでとう！</p>
+      <div class="btnrow">
+        <button class="btn" id="ovAgain">もう一回</button>
+        <a class="btn" id="ovLetter" href="secret.html">手紙を見る</a>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="assets/game.js"></script>
+</body>
+</html>
