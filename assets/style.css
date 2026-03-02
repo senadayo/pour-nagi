@@ -1,0 +1,310 @@
+:root{
+  --ink:#151515;
+  --muted:#444;
+  --rule:#d8d2c8;
+  --paper1:#fbf7ef;
+  --paper2:#f3efe7;
+  --card:rgba(255,255,255,.42);
+  --card2:rgba(255,255,255,.28);
+  --shadow:0 20px 60px rgba(0,0,0,.08);
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 800px at 50% 20%, rgba(0,0,0,.05), transparent 55%),
+    radial-gradient(900px 600px at 50% 110%, rgba(0,0,0,.06), transparent 55%),
+    linear-gradient(180deg, var(--paper1), var(--paper2));
+  font-family: "Noto Serif JP","Cormorant Garamond","Times New Roman",serif;
+  letter-spacing:.02em;
+}
+
+/* Google Fonts（ネット接続あり前提。なくてもフォールバックで表示OK） */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap');
+
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.9}
+
+.container{
+  max-width:980px;
+  margin:0 auto;
+  padding:28px 18px 64px;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 18px;
+  border:1px solid rgba(0,0,0,.08);
+  background:rgba(255,255,255,.30);
+  border-radius:999px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  backdrop-filter: blur(6px);
+}
+
+.brand{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  white-space:nowrap;
+}
+.brand .logo{
+  font-family:"Cormorant Garamond","Times New Roman",serif;
+  font-weight:600;
+  letter-spacing:.08em;
+  font-size:18px;
+}
+.brand .tag{
+  font-size:12px;
+  color:var(--muted);
+  letter-spacing:.12em;
+}
+
+.links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.pill{
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.12);
+  background:rgba(255,255,255,.40);
+  font-size:13px;
+}
+.pill.active{
+  background:rgba(255,255,255,.75);
+  border-color:rgba(0,0,0,.18);
+}
+
+.hero{
+  margin-top:22px;
+  padding:46px 22px;
+  border:1px solid rgba(0,0,0,.08);
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"N";
+  position:absolute;
+  inset:auto auto -140px -30px;
+  font-family:"Cormorant Garamond","Times New Roman",serif;
+  font-size:560px;
+  font-weight:500;
+  color:rgba(0,0,0,.035);
+  transform:rotate(-12deg);
+  pointer-events:none;
+  user-select:none;
+}
+
+.kicker{
+  font-family:"Cormorant Garamond","Times New Roman",serif;
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:13px;
+  color:var(--muted);
+  text-align:center;
+}
+.h1{
+  margin:12px 0 0;
+  font-family:"Cormorant Garamond","Times New Roman",serif;
+  font-weight:600;
+  letter-spacing:.06em;
+  font-size:44px;
+  text-align:center;
+}
+.sub{
+  margin:10px auto 0;
+  max-width:720px;
+  line-height:1.9;
+  color:var(--muted);
+  text-align:center;
+}
+
+.rule{
+  margin:22px auto 16px;
+  width:min(560px, 92%);
+  border:0;
+  border-top:1px solid var(--rule);
+}
+
+.grid{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:14px;
+}
+.card{
+  grid-column: span 6;
+  padding:18px 18px 16px;
+  border:1px solid rgba(0,0,0,.08);
+  background:var(--card2);
+  border-radius:var(--radius);
+  box-shadow:0 12px 30px rgba(0,0,0,.05);
+}
+.card h3{
+  margin:0 0 8px;
+  font-size:16px;
+  letter-spacing:.06em;
+}
+.card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.85;
+  font-size:14px;
+}
+
+.section{
+  margin-top:22px;
+  padding:34px 22px;
+  border:1px solid rgba(0,0,0,.08);
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.center{ text-align:center; }
+
+.menu{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-top:6px;
+}
+.item{
+  text-align:center;
+  padding:10px 8px;
+}
+.cat{
+  font-family:"Cormorant Garamond","Times New Roman",serif;
+  font-size:14px;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+.jp{
+  margin-top:8px;
+  font-size:19px;
+  font-weight:500;
+}
+.fr{
+  margin-top:6px;
+  font-family:"Cormorant Garamond","Times New Roman",serif;
+  font-size:16px;
+  color:var(--muted);
+  letter-spacing:.05em;
+}
+.bullets{
+  margin:10px auto 0;
+  max-width:520px;
+  color:var(--muted);
+  font-family:"Cormorant Garamond","Times New Roman",serif;
+  font-size:16px;
+  text-align:left;
+}
+.bullets li{ margin:6px 0; }
+
+.btnrow{
+  margin-top:16px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.btn{
+  border:1px solid rgba(0,0,0,.18);
+  background:rgba(255,255,255,.72);
+  padding:10px 14px;
+  border-radius:12px;
+  font-family:inherit;
+  cursor:pointer;
+}
+.btn:hover{ background:rgba(255,255,255,.92); }
+
+.small{ font-size:13px; color:var(--muted); line-height:1.8; }
+
+.qbox{
+  max-width:720px;
+  margin:0 auto;
+  padding:18px;
+  border-radius:var(--radius);
+  border:1px solid rgba(0,0,0,.10);
+  background:rgba(255,255,255,.50);
+}
+.qtitle{
+  font-size:18px;
+  margin:0 0 6px;
+}
+.qtext{
+  margin:0 0 14px;
+  color:var(--muted);
+  line-height:1.8;
+}
+.field{
+  width:100%;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.18);
+  background:rgba(255,255,255,.75);
+  font-family:inherit;
+  font-size:16px;
+}
+.choices{
+  display:grid;
+  gap:10px;
+}
+.choice{
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.16);
+  background:rgba(255,255,255,.70);
+  cursor:pointer;
+}
+.choice:hover{ background:rgba(255,255,255,.92); }
+
+.toast{
+  margin-top:12px;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,.12);
+  background:rgba(255,255,255,.75);
+  color:var(--muted);
+  text-align:center;
+}
+.toast.ok{ border-color: rgba(30,130,70,.35); }
+.toast.ng{ border-color: rgba(190,40,40,.35); }
+
+.shake{
+  animation: shake .35s linear 1;
+}
+@keyframes shake{
+  0%,100%{ transform: translateX(0); }
+  20%{ transform: translateX(-10px); }
+  40%{ transform: translateX(10px); }
+  60%{ transform: translateX(-7px); }
+  80%{ transform: translateX(7px); }
+}
+
+@media (max-width:720px){
+  .card{ grid-column: span 12; }
+  .h1{ font-size:34px; }
+  .jp{ font-size:18px; }
+}
+
+/* 印刷 */
+@media print{
+  .nav,.btnrow{ display:none; }
+  body{ background:#fff; }
+  .hero,.section{ box-shadow:none; background:#fff; border:none; }
+  .container{ padding:0; }
+}
